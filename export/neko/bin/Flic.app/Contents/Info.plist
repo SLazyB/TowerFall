@@ -21,11 +21,7 @@
 	<key>CFBundleSignature</key>
 	<string>haxe</string>
 	<key>CFBundleVersion</key>
-<<<<<<< Updated upstream
-	<string>14</string>
-=======
-	<string>30</string>
->>>>>>> Stashed changes
+	<string>32</string>
 	<key>NSAppleScriptEnabled</key>
 	<string>NO</string>
 	<key>LSApplicationCategoryType</key>

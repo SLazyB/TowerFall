@@ -105,6 +105,7 @@ null
 @:keep @:bind #if display private #end class __ASSET__assets_data_wall_stairway_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_character_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_duck_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_fw_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_music_music_goes_here_txt extends null { }
 @:keep @:bind #if display private #end class __ASSET__assets_sounds_crack_1_wav extends null { }
 @:keep @:bind #if display private #end class __ASSET__assets_sounds_crack_2_wav extends null { }

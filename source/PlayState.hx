@@ -17,7 +17,7 @@ import flixel.util.FlxStringUtil;
 class PlayState extends FlxState
 {
 	var _player: Player;
-	//var _zoomCam:FlxZoomCamera;
+	var _zoomCam:FlxZoomCamera;
 	var _map:TiledMap;
 	var _mWalls:FlxTilemap;
 	private var timeTxt:FlxText;
@@ -35,13 +35,13 @@ class PlayState extends FlxState
 		_mWalls.setTileProperties(4, FlxObject.ANY);
 
 		add(_mWalls);
-		//var cam:FlxCamera = FlxG.camera;
-		//_zoomCam = new FlxZoomCamera(Std.int(cam.x), Std.int(cam.y), cam.width, cam.height, cam.zoom);
-		//_zoomCam.follow(_player, TOPDOWN, 1);
-		//FlxG.cameras.reset(_zoomCam);
-		//_zoomCam.targetZoom += 1;
+		var cam:FlxCamera = FlxG.camera;
+		_zoomCam = new FlxZoomCamera(Std.int(cam.x), Std.int(cam.y), cam.width, cam.height, cam.zoom);
+		_zoomCam.follow(_player, TOPDOWN, 1);
+		FlxG.cameras.reset(_zoomCam);
+		_zoomCam.targetZoom += 1;
 
-		FlxG.camera.follow(_player, TOPDOWN,1);
+		//FlxG.camera.follow(_player, TOPDOWN,1);
 		super.create();
 		
 		timeTxt = new FlxText(0,0,100);
