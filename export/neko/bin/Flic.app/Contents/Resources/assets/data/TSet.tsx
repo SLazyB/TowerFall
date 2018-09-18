@@ -5,7 +5,7 @@
   <image width="16" height="16" source="wal.png"/>
  </tile>
  <tile id="1">
-  <image width="16" height="16" source="FloorTile.png"/>
+  <image width="16" height="16" source="Floor Tile.png"/>
  </tile>
  <tile id="2">
   <image width="16" height="16" source="wall corner.png"/>

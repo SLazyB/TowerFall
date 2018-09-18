@@ -97,8 +97,8 @@ null
 @:keep @:bind #if display private #end class __ASSET__assets_data_pillaryellow_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_redpillar_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_testtilemap_tmx extends null { }
-@:keep @:bind #if display private #end class __ASSET__assets_data_tile_set_tsx extends null { }
 @:keep @:bind #if display private #end class __ASSET__assets_data_tset_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_data_tset_tsx extends null { }
 @:keep @:bind #if display private #end class __ASSET__assets_data_wal_horizontal_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_wal_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_wall_corner_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }

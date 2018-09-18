@@ -24,6 +24,7 @@ class PlayState extends FlxState
     public var countdown:Float = 120;
 	override public function create():Void
 	{
+		FlxG.mouse.visible = false;
 		_player = new Player(144,144);
 		_map = new TiledMap(AssetPaths.TestTileMap__tmx);
 		_mWalls = new FlxTilemap();
