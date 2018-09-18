@@ -18,7 +18,6 @@ class PlayState extends FlxState
 {
 	var _player: Player;
 	//var _zoomCam:FlxZoomCamera;
-	var _CD:FlxTimer;
 	var _map:TiledMap;
 	var _mWalls:FlxTilemap;
 	private var timeTxt:FlxText;
