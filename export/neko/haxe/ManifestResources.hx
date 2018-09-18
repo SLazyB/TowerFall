@@ -106,7 +106,27 @@ null
 @:keep @:bind #if display private #end class __ASSET__assets_images_character_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_duck_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_music_music_goes_here_txt extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_crack_1_wav extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_crack_2_wav extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_grab_1_wav extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_grab_2_wav extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_grab_3_mp3 extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_grab_4_mp3 extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_lever_1_wav extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_notice_1_wav extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_notice_2_wav extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_notice_3_wav extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_pillar_move_1_mp3 extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_pillar_move_2_wav extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_pressure_plate_wav extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_select_wav extends null { }
 @:keep @:bind #if display private #end class __ASSET__assets_sounds_sounds_go_here_txt extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_step_wav extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_ui_button_wav extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_win_1_wav extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_win_2_wav extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_win_3_wav extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_sounds_win_4_wav extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_beep_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends null { }

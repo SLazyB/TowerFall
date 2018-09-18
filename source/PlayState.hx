@@ -56,8 +56,4 @@ class PlayState extends FlxState
 		countdown-= FlxG.elapsed;
 		timeTxt.text = FlxStringUtil.formatTime(countdown);
 	}
-
-	function clickPlay():Void{
-		FlxG.switchState(new PlayState());
-	}
 }
