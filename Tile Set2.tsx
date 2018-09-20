@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset name="Tileset2" tilewidth="16" tileheight="16" tilecount="33" columns="0">
+<tileset name="Tileset2" tilewidth="32" tileheight="32" tilecount="34" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="16" height="16" source="../../tilemapimagry/000.png"/>
@@ -80,24 +80,27 @@
   <image width="16" height="16" source="../../tilemapimagry/026.png"/>
  </tile>
  <tile id="27">
-  <image width="16" height="16" source="wall tile upsideown.png"/>
+  <image source="wall tile upsideown.png"/>
  </tile>
  <tile id="28">
-  <image width="16" height="16" source="floor1.png"/>
+  <image source="floor1.png"/>
  </tile>
  <tile id="29">
-  <image width="16" height="16" source="floor2.png"/>
+  <image source="floor2.png"/>
  </tile>
  <tile id="30">
-  <image width="16" height="16" source="floor3.png"/>
+  <image source="floor3.png"/>
  </tile>
  <tile id="31">
-  <image width="16" height="16" source="floor4.png"/>
+  <image source="floor4.png"/>
  </tile>
  <tile id="32">
   <image width="16" height="16" source="redPillar.png"/>
  </tile>
  <tile id="33">
   <image width="16" height="16" source="wallSwitch.png"/>
+ </tile>
+ <tile id="34">
+  <image width="32" height="32" source="../../../Desktop/floor 32x32 (1).png"/>
  </tile>
 </tileset>
