@@ -90,10 +90,17 @@ null
 #if !display
 #if flash
 
+@:keep @:bind #if display private #end class __ASSET__assets_data_characterbrother_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_data_everything_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_floorbotton_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_data_floorbottonblack_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_data_floorbottonblue_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_data_floorbottonred_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_data_floorbottonyellow_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_floorhole_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_floorlighter_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_floortile_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_data_pil_move_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_pillar_animation_000_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_pillar_animation_001_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_pillar_animation_002_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
@@ -102,7 +109,6 @@ null
 @:keep @:bind #if display private #end class __ASSET__assets_data_pillar_animation_005_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_pillar_animation_006_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_pillar_animation_007_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
-@:keep @:bind #if display private #end class __ASSET__assets_data_pillar_blue_pressed_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_pillar_blue_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_pillarblack_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_pillarblackpressed_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
@@ -113,9 +119,15 @@ null
 @:keep @:bind #if display private #end class __ASSET__assets_data_randomstuffforgame_tsx extends null { }
 @:keep @:bind #if display private #end class __ASSET__assets_data_redpillar_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_redpillarpressed_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_data_switching_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_testtilemap_tmx extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_data_testtilemap1_tmx extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_data_testtilemap2_tmx extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_data_tile_set_tsx extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_data_tile_set2_tsx extends null { }
 @:keep @:bind #if display private #end class __ASSET__assets_data_tset_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_tset_tsx extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_data_tset1_tsx extends null { }
 @:keep @:bind #if display private #end class __ASSET__assets_data_wal_horizontal_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_wal_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_wall_corner_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
