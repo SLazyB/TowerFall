@@ -13,6 +13,7 @@ import flixel.FlxObject;
 import flixel.util.FlxTimer;
 import flixel.text.FlxText;
 import flixel.util.FlxStringUtil;
+import flixel.util.FlxColor;
 
 class PlayState extends FlxState
 {
@@ -20,6 +21,7 @@ class PlayState extends FlxState
 	var _zoomCam:FlxZoomCamera;
 	var _map:TiledMap;
 	var _mWalls:FlxTilemap;
+	var myText:FlxText;
 	private var timeTxt:FlxText;
     public var countdown:Float = 120;
 	override public function create():Void
@@ -40,12 +42,15 @@ class PlayState extends FlxState
 		_zoomCam = new FlxZoomCamera(Std.int(cam.x), Std.int(cam.y), cam.width, cam.height, cam.zoom);
 		_zoomCam.follow(_player, TOPDOWN, 1);
 		FlxG.cameras.reset(_zoomCam);
-		_zoomCam.targetZoom += 1;
+		//_zoomCam.targetZoom += 1;
 
 		//FlxG.camera.follow(_player, TOPDOWN,1);
 		super.create();
-		
+		myText = new FlxText(144, 144, 500); // x, y, width
+		myText.text = "Hello World";
+		myText.setBorderStyle(OUTLINE, FlxColor.RED, 1);
 		timeTxt = new FlxText(0,0,100);
+		add(myText);
 		add(timeTxt);
 		add(_player);
 	}
