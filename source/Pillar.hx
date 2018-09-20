@@ -19,22 +19,37 @@ class Pillar extends FlxSprite
     {
         super(X, Y, SimpleGraphic);
         up = true;
-        loadGraphic("assets/data/pil_move.png", true, 16, 16);
-        animation.add("mv",[0,1],10,false);
         immovable = true;
 
     }
     public function settype(s:String):Void{
         type = s;
     }
-    public function setname(s:String):Void{
-        col = s;
-    }
     public function setroom(s:Int):Void{
         room = s;
     }
-    public function setcolor(s:Int):Void{
+    public function setcolor(s:Int){
         col = s;
+        if(col == 1){
+            loadGraphic("assets/data/redPillar.png", true, 16, 16);
+            animation.add("mv",[0,1],10,false);
+        }
+        else if(col == 2){
+            loadGraphic("assets/data/bluePillar.png", true, 16, 16);
+            animation.add("mv",[0,1],10,false);
+        }
+        else if(col == 3){
+            loadGraphic("assets/data/greenPillar.png", true, 16, 16);
+            animation.add("mv",[0,1],10,false);
+        }
+        else if(col == 4){
+            loadGraphic("assets/data/yellowPillar.png", true, 16, 16);
+            animation.add("mv",[0,1],10,false);
+        }
+        else{
+            loadGraphic("assets/data/blackPillar.png", true, 16, 16);
+            animation.add("mv",[0,1],10,false);
+        }
     }
     public function change():Void{
         if(up == true){
