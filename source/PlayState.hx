@@ -16,7 +16,7 @@ import flixel.text.FlxText;
 import flixel.util.FlxStringUtil;
 import flixel.util.FlxColor;
 import flixel.group.FlxGroup;
-import flixel.addons.ui.FlxUIPopup;
+import flixel.system.FlxSound;
 
 class PlayState extends FlxState
 {
@@ -32,11 +32,18 @@ class PlayState extends FlxState
 	private var ppl:FlxTypedGroup<PPlate>;
 	public var cur_x:Int;
 	public var cur_y:Int;
-	public var tx:FlxUIPopup;
+	public var cur_room:Int;
+	public var theme:FlxSound;
 	override public function create():Void
 	{
+		theme = FlxG.sound.load(AssetPaths.theme__wav);
+		theme.looped = true;
+		theme.play();
+		cur_room = 0;
 		pil = new FlxTypedGroup<Pillar>(10);
 		swi = new FlxTypedGroup<Switch>(10);
+		ppl = new FlxTypedGroup<PPlate>(10);
+
 		FlxG.mouse.visible = false;
 		_player = new Player();
 		_map = new TiledMap(AssetPaths.TestTileMap1__tmx);
@@ -53,14 +60,14 @@ class PlayState extends FlxState
 		_zoomCam = new FlxZoomCamera(Std.int(cam.x), Std.int(cam.y), cam.width, cam.height, cam.zoom);
 		_zoomCam.follow(_player, TOPDOWN, 1);
 		FlxG.cameras.reset(_zoomCam);
-		//_zoomCam.targetZoom += 1;
+		_zoomCam.targetZoom += 1;
 
 		//FlxG.camera.follow(_player, TOPDOWN,1);
 		super.create();
-		myText = new FlxText(144, 144, 500); // x, y, width
-		myText.text = "Hello World";
-		myText.setBorderStyle(OUTLINE, FlxColor.RED, 1);
-		timeTxt = new FlxText(0,0,100);
+		//myText = new FlxText(144, 144, 500); // x, y, width
+		//myText.text = "Hello World";
+		//myText.setBorderStyle(OUTLINE, FlxColor.RED, 1);
+		//timeTxt = new FlxText(0,0,100);
 		var tmpMap:TiledObjectLayer = cast(_map.getLayer("Mech"));
 		placeEntities(tmpMap);
 		
@@ -77,7 +84,7 @@ class PlayState extends FlxState
 				if(FlxG.keys.justPressed.E){
 					s.change();
 					for(p in pil){
-						if(p.col == "fuck"){
+						if(s.col == p.col){
 							p.change();
 						}
 					}
@@ -101,7 +108,7 @@ class PlayState extends FlxState
 		FlxG.collide(_player, pil);
 		FlxG.collide(_player,_mWalls);
 		countdown-= FlxG.elapsed;
-		timeTxt.text = FlxStringUtil.formatTime(countdown);
+		//timeTxt.text = FlxStringUtil.formatTime(countdown);
 	}
 	
 	private function placeEntities(tmp:TiledObjectLayer):Void
@@ -109,15 +116,17 @@ class PlayState extends FlxState
 		for(e in tmp.objects){
 			var x:Int = Std.parseInt(e.xmlData.x.get("x"));
 			var y:Int = Std.parseInt(e.xmlData.x.get("y"));
-			if(e.type == "pil"){
+			if(e.type == "pillar"){
 				var p = new Pillar(x,y-16);
 				p.settype(e.type);
 				p.setname(e.name);
 				p.setroom(Std.parseInt(e.xmlData.x.get("room")));
+				p.setcolor(Std.parseInt(e.xmlData.x.get("color")));
 				pil.add(p);
 			}
 			else if(e.type == "switch"){
 				var s = new Switch(x,y-13);
+				s.setcolor(Std.parseInt(e.xmlData.x.get("color")));
 				s.settype(e.type);
 				swi.add(s);
 			}

@@ -7,6 +7,7 @@ import flixel.FlxObject;
 import flixel.util.FlxColor;
 import flixel.FlxG;
 import flixel.math.FlxPoint;
+import flixel.system.FlxSound;
 
 class Pillar extends FlxSprite
 {
@@ -15,15 +16,21 @@ class Pillar extends FlxSprite
     public var up:Bool;
     public var type:String;
     public var room:Int;
+    public var name:String;
+    private var _sndUp:FlxSound;
     public function new(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset)
     {
         super(X, Y, SimpleGraphic);
         up = true;
         immovable = true;
+        _sndUp = FlxG.sound.load(AssetPaths.lever1__wav);
 
     }
     public function settype(s:String):Void{
         type = s;
+    }
+    public function setname(s:String):Void{
+        name = s;
     }
     public function setroom(s:Int):Void{
         room = s;
@@ -54,6 +61,7 @@ class Pillar extends FlxSprite
     public function change():Void{
         if(up == true){
             animation.play("mv");
+            _sndUp.play();
             allowCollisions = FlxObject.NONE;
             up = false;
         }
@@ -61,6 +69,7 @@ class Pillar extends FlxSprite
             allowCollisions = FlxObject.ANY;
             animation.reset();
             animation.stop();
+            _sndUp.play();
             up = true;
         }
     }

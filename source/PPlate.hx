@@ -10,11 +10,11 @@ import flixel.math.FlxPoint;
 
 class PPlate extends FlxSprite
 {
-    public var col:String;
     public var up:Bool;
     public var type:String;
     public var room:Int;
-    public function new(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset, C:Int)
+    public var name:String;
+    public function new(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset)
     {
         super(X, Y, SimpleGraphic);
         loadGraphic("assets/data/FloorBottonBlack.png", true, 16, 16);
@@ -24,10 +24,10 @@ class PPlate extends FlxSprite
         type = s;
     }
     public function setname(s:String){
-        type = s;
+        name = s;
     }
     public function setroom(s:Int){
-        type = s;
+        room = s;
     }
     override public function update(elapsed:Float):Void{
         super.update(elapsed);

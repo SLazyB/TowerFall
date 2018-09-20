@@ -7,18 +7,21 @@ import flixel.FlxObject;
 import flixel.util.FlxColor;
 import flixel.FlxG;
 import flixel.math.FlxPoint;
+import flixel.system.FlxSound;
 
 class Player extends FlxSprite
 {
     public var speed:Float = 150;
     public var c_mA:Float = 1000;
     public var playing:Bool = false;
+    public var _sndWalk:FlxSound;
     public function new(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset)
     {
         super(X, Y, SimpleGraphic);
         loadGraphic("assets/images/fw.png", true, 32, 32);
-        animation.add("fw", [4,3,4,5,],6,true);
+        animation.add("fw", [4,3,4,5,],14,true);
         drag.x = drag.y = 1500;
+        _sndWalk = FlxG.sound.load(AssetPaths.step__wav);
     }
     
     public function movement():Void{
@@ -69,6 +72,7 @@ class Player extends FlxSprite
             velocity.rotate(FlxPoint.weak(0, 0), mA);
         }
         if ((velocity.x != 0 || velocity.y != 0) && touching == FlxObject.NONE){
+            _sndWalk.play();
             if(!playing || c_mA != mA){
                 animation.play("fw");
                 c_mA = mA;
