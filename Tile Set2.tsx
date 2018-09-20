@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset name="Tileset2" tilewidth="32" tileheight="32" tilecount="34" columns="0">
+<tileset name="Tileset2" tilewidth="32" tileheight="32" tilecount="29" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="16" height="16" source="../../tilemapimagry/000.png"/>
@@ -78,21 +78,6 @@
  </tile>
  <tile id="26">
   <image width="16" height="16" source="../../tilemapimagry/026.png"/>
- </tile>
- <tile id="27">
-  <image source="wall tile upsideown.png"/>
- </tile>
- <tile id="28">
-  <image source="floor1.png"/>
- </tile>
- <tile id="29">
-  <image source="floor2.png"/>
- </tile>
- <tile id="30">
-  <image source="floor3.png"/>
- </tile>
- <tile id="31">
-  <image source="floor4.png"/>
  </tile>
  <tile id="32">
   <image width="16" height="16" source="redPillar.png"/>
