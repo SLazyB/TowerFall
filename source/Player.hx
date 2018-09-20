@@ -18,8 +18,7 @@ class Player extends FlxSprite
         super(X, Y, SimpleGraphic);
         loadGraphic("assets/images/fw.png", true, 32, 32);
         animation.add("fw", [4,3,4,5,],6,true);
-
-        drag.x = drag.y = 1250;
+        drag.x = drag.y = 1500;
     }
     
     public function movement():Void{
