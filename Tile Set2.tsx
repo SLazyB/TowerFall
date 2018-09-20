@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset name="Tileset2" tilewidth="32" tileheight="32" tilecount="35" columns="0">
+<tileset name="Tileset2" tilewidth="32" tileheight="32" tilecount="36" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="16" height="16" source="../../tilemapimagry/000.png"/>
@@ -105,5 +105,8 @@
  </tile>
  <tile id="43">
   <image width="16" height="16" source="../../greenSwitch.png"/>
+ </tile>
+ <tile id="44">
+  <image width="16" height="16" source="FloorBottonBlack.png"/>
  </tile>
 </tileset>
