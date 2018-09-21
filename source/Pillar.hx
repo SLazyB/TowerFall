@@ -23,6 +23,8 @@ class Pillar extends FlxSprite
         super(X, Y, SimpleGraphic);
         up = true;
         immovable = true;
+        loadGraphic("assets/data/redPillarA.png", true, 16, 16);
+        animation.add("mv",[0,1],10,false);
         _sndUp = FlxG.sound.load(AssetPaths.lever1__wav);
 
     }

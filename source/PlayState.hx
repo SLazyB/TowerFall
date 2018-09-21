@@ -17,6 +17,7 @@ import flixel.util.FlxStringUtil;
 import flixel.util.FlxColor;
 import flixel.group.FlxGroup;
 import flixel.system.FlxSound;
+import flixel.addons.editors.ogmo.FlxOgmoLoader;
 
 class PlayState extends FlxState
 {
@@ -57,10 +58,10 @@ class PlayState extends FlxState
 
 
 		FlxG.mouse.visible = false;
-		_player = new Player(609,614);
-		_map = new TiledMap(AssetPaths.LevelOne__tmx);
+		_player = new Player(640,640);
+		_map = new TiledMap(AssetPaths.TestTileMap1__tmx);
 		_mWalls = new FlxTilemap();
-		_mWalls.loadMapFromArray(cast(_map.getLayer("Tile Layer 3"), TiledTileLayer).tileArray, _map.width, _map.height, AssetPaths.everything__png, _map.tileWidth, _map.tileHeight, FlxTilemapAutoTiling.OFF, 1, 1, 3);
+		_mWalls.loadMapFromArray(cast(_map.getLayer("Tile1"), TiledTileLayer).tileArray, _map.width, _map.height, AssetPaths.tset__png, _map.tileWidth, _map.tileHeight, FlxTilemapAutoTiling.OFF, 1, 1, 3);
 		_mWalls.follow();
 		_mWalls.setTileProperties(1, FlxObject.ANY);
 		_mWalls.setTileProperties(2, FlxObject.NONE);
@@ -79,8 +80,8 @@ class PlayState extends FlxState
 		//myText = new FlxText(144, 144, 500); // x, y, width
 		//myText.text = "Hello World";
 		//myText.setBorderStyle(OUTLINE, FlxColor.RED, 1);
-		//var tmpMap:TiledObjectLayer = cast(_map.getLayer("Object Layer 1"));
-		//placeEntities(tmpMap);
+		var tmpMap:TiledObjectLayer = cast(_map.getLayer("Mech"));
+		placeEntities(tmpMap);
 		
 		//add(tmpMap);
 		add(myText);
@@ -107,7 +108,7 @@ class PlayState extends FlxState
 				if(FlxG.keys.justPressed.E){
 					s.change();
 					for(p in pil){
-						if(s.col == p.col){
+						if(s.name == p.name){
 							p.change();
 						}
 					}
@@ -176,7 +177,6 @@ class PlayState extends FlxState
 		FlxG.collide(_player, pil);
 		FlxG.collide(_player,_mWalls);
 	}
-	
 	private function placeEntities(tmp:TiledObjectLayer):Void
 	{
 		for(e in tmp.objects){
@@ -186,13 +186,14 @@ class PlayState extends FlxState
 				var p = new Pillar(x,y-16);
 				p.settype(e.type);
 				p.setname(e.name);
-				p.setroom(Std.parseInt(e.xmlData.x.get("room")));
-				p.setcolor(Std.parseInt(e.xmlData.x.get("color")));
+				//p.setroom(Std.parseInt(e.xmlData.x.get("room")));
+				//p.setcolor(Std.parseInt(e.xmlData.x.get("color")));
 				pil.add(p);
 			}
 			else if(e.type == "lever"){
 				var s = new Switch(x,y-13);
-				s.setcolor(Std.parseInt(e.xmlData.x.get("color")));
+				//s.setcolor(Std.parseInt(e.xmlData.x.get("color")));
+				s.setname(e.name);
 				s.settype(e.type);
 				swi.add(s);
 			}
@@ -205,25 +206,29 @@ class PlayState extends FlxState
 			else if(e.type == "page"){
 				var pg = new Page(x,y-16);
 				pg.settype(e.type);
-				pg.setroom(Std.parseInt(e.xmlData.x.get("room")));
+				//pg.setroom(Std.parseInt(e.xmlData.x.get("room")));
 				pg.setchange(0);
 				pgs.add(pg);
 
 			}
-			else if(e.type == "exit"){
+			else if(e.name == "start"){
+				_player.x = e.x;
+				_player.y = e.y;
+			}
+			/*else if(e.type == "exit"){
 				var ext = new Exit(x,y-16);
 				ext.settype(e.type);
 				ext.setroom(Std.parseInt(e.xmlData.x.get("room")));
 				ext.setname(e.name);
 				exts.add(ext);
 			}
-			else if(e.type == "entrance"){
+			else if(e.type == "start"){
 				var ent = new Start(x,y-16);
 				ent.settype(e.type);
 				ent.setroom(Std.parseInt(e.xmlData.x.get("room")));
 				ent.setname(e.name);
 				ents.add(ent);
-			}
+			}*/
 		}
 		for(s in swi){
 			add(s);
@@ -237,7 +242,7 @@ class PlayState extends FlxState
 		for(pg in pgs){
 			add(pg);
 		}
-		for(et in ents){
+		/*for(et in ents){
 			if(et.room == 1){
 				_player.x = et.x;
 				_player.y = et.y;
@@ -245,7 +250,7 @@ class PlayState extends FlxState
 				cur_y = et.y;
 			}
 			
-		}
+		}*/
 		add(_player);
 	}
 }

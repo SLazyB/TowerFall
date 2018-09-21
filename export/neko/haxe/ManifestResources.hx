@@ -106,6 +106,8 @@ null
 @:keep @:bind #if display private #end class __ASSET__assets_data_greysquare_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_intro_tmx extends null { }
 @:keep @:bind #if display private #end class __ASSET__assets_data_letter_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_data_level_one_tmx extends null { }
+@:keep @:bind #if display private #end class __ASSET__assets_data_level1_oel extends null { }
 @:keep @:bind #if display private #end class __ASSET__assets_data_levelone_tmx extends null { }
 @:keep @:bind #if display private #end class __ASSET__assets_data_note1_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_note2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
@@ -120,6 +122,7 @@ null
 @:keep @:bind #if display private #end class __ASSET__assets_data_pillar_animation_005_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_pillar_animation_006_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_pillar_animation_007_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_data_pleasefortheloveofgodwork_tmx extends null { }
 @:keep @:bind #if display private #end class __ASSET__assets_data_randomstuffforgame_tsx extends null { }
 @:keep @:bind #if display private #end class __ASSET__assets_data_redpillara_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_data_redswitcha_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
