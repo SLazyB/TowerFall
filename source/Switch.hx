@@ -7,6 +7,7 @@ import flixel.FlxObject;
 import flixel.util.FlxColor;
 import flixel.FlxG;
 import flixel.math.FlxPoint;
+import flixel.system.FlxSound;
 
 class Switch extends FlxSprite
 {
@@ -14,9 +15,10 @@ class Switch extends FlxSprite
     public var up:Bool;
     public var type:String;
     public var room:Int;
-    public function new(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset)
-    {
+    private var _sndOpen:FlxSound;
+    public function new(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset){
         super(X, Y, SimpleGraphic);
+        _sndOpen = FlxG.sound.load(AssetPaths.lever1__wav);
         up = true;
     }
     public function settype(s:String){
@@ -52,11 +54,13 @@ class Switch extends FlxSprite
     public function change():Void{
         if(up == true){
             animation.play("mv");
+            _sndOpen.play();
             up = false;
         }
         else{
             animation.stop();
             animation.reset();
+            _sndOpen.play();
             up = true;
         }
     }
