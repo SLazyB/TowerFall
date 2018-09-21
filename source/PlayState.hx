@@ -114,13 +114,15 @@ class PlayState extends FlxState
 			}
 		}
 		for(pg in pgs){
-			if(FlxG.keys.justPressed.E){
-				tmppg = new Page(pg.x-200,pg.y-16);
-				tmppg.setchange(pg.room);
-				add(tmppg);
-				tpexist = true;
-				pg.kill();
-				countdown = 100;
+			if(FlxG.pixelPerfectOverlap(_player,pg)){
+				if(FlxG.keys.justPressed.E){
+					tmppg = new Page(pg.x-200,pg.y-16);
+					tmppg.setchange(pg.room);
+					add(tmppg);
+					tpexist = true;
+					pg.destroy();
+					countdown = 100;
+				}
 			}
 		}
 		if(FlxG.keys.justPressed.R){
