@@ -75,7 +75,7 @@ class Player extends FlxSprite
             velocity.set(speed, 0);
             velocity.rotate(FlxPoint.weak(0, 0), mA);
         }
-        if ((velocity.x != 0 || velocity.y != 0) && touching == FlxObject.NONE){
+        if (velocity.x != 0 || velocity.y != 0){
             _sndWalk.play();
             if(!playing || c_mA != mA){
                 switch (facing)

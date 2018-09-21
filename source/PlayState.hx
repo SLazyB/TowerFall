@@ -30,14 +30,18 @@ class PlayState extends FlxState
 	private var pil:FlxTypedGroup<Pillar>;
 	private var swi:FlxTypedGroup<Switch>;
 	private var ppl:FlxTypedGroup<PPlate>;
+	private var pgs:FlxTypedGroup<Page>;
 	public var cur_x:Int;
 	public var cur_y:Int;
 	public var cur_room:Int;
 	public var theme:FlxSound;
 	public var p_name:String;
+	private var tmppg:Page;
+	private var tpexist:Bool;
 
 	override public function create():Void
 	{
+		tpexist = false;
 		theme = FlxG.sound.load(AssetPaths.theme__wav);
 		theme.looped = true;
 		theme.play();
@@ -45,6 +49,7 @@ class PlayState extends FlxState
 		pil = new FlxTypedGroup<Pillar>(10);
 		swi = new FlxTypedGroup<Switch>(10);
 		ppl = new FlxTypedGroup<PPlate>(10);
+		pgs = new FlxTypedGroup<Page>(10);
 
 		FlxG.mouse.visible = false;
 		_player = new Player();
@@ -62,7 +67,7 @@ class PlayState extends FlxState
 		_zoomCam = new FlxZoomCamera(Std.int(cam.x), Std.int(cam.y), cam.width, cam.height, cam.zoom);
 		_zoomCam.follow(_player, TOPDOWN, 1);
 		FlxG.cameras.reset(_zoomCam);
-		_zoomCam.targetZoom += 1;
+		_zoomCam.targetZoom += 0.5;
 
 		//FlxG.camera.follow(_player, TOPDOWN,1);
 		super.create();
@@ -108,6 +113,16 @@ class PlayState extends FlxState
 				}
 			}
 		}
+		for(pg in pgs){
+			if(FlxG.keys.justPressed.E){
+				tmppg = new Page(pg.x-200,pg.y-16);
+				tmppg.setchange(pg.room);
+				add(tmppg);
+				tpexist = true;
+				pg.kill();
+				countdown = 100;
+			}
+		}
 		if(FlxG.keys.justPressed.R){
 			_player.x = cur_x;
 			_player.y = cur_y;
@@ -129,6 +144,10 @@ class PlayState extends FlxState
 						p.change();
 					}
 				}
+			}
+			if(tpexist == true){
+				tmppg.kill();
+				tpexist = false;
 			}
 			countdown = -1;
 		}
@@ -164,6 +183,14 @@ class PlayState extends FlxState
 				pp.setname(e.name);
 				ppl.add(pp);
 			}
+			else if(e.type == "page"){
+				var pg = new Page(x,y-16);
+				pg.settype(e.type);
+				pg.setroom(Std.parseInt(e.xmlData.x.get("room")));
+				pg.setchange(0);
+				pgs.add(pg);
+
+			}
 			else if(e.name == "Start"){
 				_player.x = x;
 				_player.y = y;
@@ -179,6 +206,9 @@ class PlayState extends FlxState
 		}
 		for(pp in ppl){
 			add(pp);
+		}
+		for(pg in pgs){
+			add(pg);
 		}
 		add(_player);
 	}
