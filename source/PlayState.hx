@@ -26,7 +26,7 @@ class PlayState extends FlxState
 	var _mWalls:FlxTilemap;
 	var myText:FlxText;
 	private var timeTxt:FlxText;
-    public var countdown:Float = 120;
+    public var countdown:Float = 100000;
 	private var pil:FlxTypedGroup<Pillar>;
 	private var swi:FlxTypedGroup<Switch>;
 	private var ppl:FlxTypedGroup<PPlate>;
@@ -34,6 +34,8 @@ class PlayState extends FlxState
 	public var cur_y:Int;
 	public var cur_room:Int;
 	public var theme:FlxSound;
+	public var p_name:String;
+
 	override public function create():Void
 	{
 		theme = FlxG.sound.load(AssetPaths.theme__wav);
@@ -67,7 +69,6 @@ class PlayState extends FlxState
 		//myText = new FlxText(144, 144, 500); // x, y, width
 		//myText.text = "Hello World";
 		//myText.setBorderStyle(OUTLINE, FlxColor.RED, 1);
-		//timeTxt = new FlxText(0,0,100);
 		var tmpMap:TiledObjectLayer = cast(_map.getLayer("Mech"));
 		placeEntities(tmpMap);
 		
@@ -91,6 +92,22 @@ class PlayState extends FlxState
 				}
 			}
 		}
+		for(pp in ppl){
+			if(FlxG.pixelPerfectOverlap(_player,pp)){
+				for(p in pil){
+					if(pp.name == p.name){
+						if(p.up == true){
+							p.change();
+							p_name = p.name;
+							countdown = 100;
+						}
+						else{
+							countdown = 100;
+						}
+					}
+				}
+			}
+		}
 		if(FlxG.keys.justPressed.R){
 			_player.x = cur_x;
 			_player.y = cur_y;
@@ -105,10 +122,21 @@ class PlayState extends FlxState
 				}
 			}
 		}
+		if(countdown == 0){
+			for(p in pil){
+				if(p.name == p_name){
+					if(p.up != true){
+						p.change();
+					}
+				}
+			}
+			countdown = -1;
+		}
+		else if(countdown > -1){
+			countdown--;
+		}
 		FlxG.collide(_player, pil);
 		FlxG.collide(_player,_mWalls);
-		countdown-= FlxG.elapsed;
-		//timeTxt.text = FlxStringUtil.formatTime(countdown);
 	}
 	
 	private function placeEntities(tmp:TiledObjectLayer):Void
@@ -133,6 +161,7 @@ class PlayState extends FlxState
 			else if(e.type == "plate"){
 				var pp = new PPlate(x,y-16);
 				pp.settype(e.type);
+				pp.setname(e.name);
 				ppl.add(pp);
 			}
 			else if(e.name == "Start"){

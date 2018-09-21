@@ -8,45 +8,33 @@ import flixel.util.FlxColor;
 import flixel.FlxG;
 import flixel.math.FlxPoint;
 
-class Pillar extends FlxSprite
+class Page extends FlxSprite
 {
 
-    public var col:Int;
-    public var up:Bool;
     public var type:String;
     public var room:Int;
     public function new(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset)
     {
         super(X, Y, SimpleGraphic);
-        up = true;
-        loadGraphic("assets/data/pil_move.png", true, 16, 16);
-        animation.add("mv",[0,1],10,false);
-        immovable = true;
-
     }
     public function settype(s:String):Void{
         type = s;
     }
-    public function setname(s:String):Void{
-        col = s;
-    }
     public function setroom(s:Int):Void{
         room = s;
     }
-    public function setcolor(s:Int):Void{
-        col = s;
-    }
-    public function change():Void{
-        if(up == true){
-            animation.play("mv");
-            allowCollisions = FlxObject.NONE;
-            up = false;
+    public function get(){
+        if(room == 1){
+            loadGraphic("assets/data/Note1.png", true, 16, 16);
         }
-        else{
-            allowCollisions = FlxObject.ANY;
-            animation.reset();
-            animation.stop();
-            up = true;
+        else if(room == 2){
+            loadGraphic("assets/data/Note2.png", true, 16, 16);
+        }
+        else if(room == 3){
+            loadGraphic("assets/data/Note3.png", true, 16, 16);
+        }
+        else if(room == 4){
+            loadGraphic("assets/data/Note4.png", true, 16, 16);
         }
     }
     override public function update(elapsed:Float):Void{
