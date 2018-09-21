@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset name="Tileset2" tilewidth="32" tileheight="32" tilecount="36" columns="0">
+<tileset name="Tileset2" tilewidth="32" tileheight="32" tilecount="38" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="16" height="16" source="../../tilemapimagry/000.png"/>
@@ -88,9 +88,6 @@
  <tile id="36">
   <image width="16" height="16" source="../../../Desktop/redPillar.png"/>
  </tile>
- <tile id="37">
-  <image width="32" height="32" source="wall stairway32x32.png"/>
- </tile>
  <tile id="38">
   <image width="16" height="16" source="../../blueSwitch.png"/>
  </tile>
@@ -108,5 +105,14 @@
  </tile>
  <tile id="44">
   <image width="16" height="16" source="FloorBottonBlack.png"/>
+ </tile>
+ <tile id="45">
+  <image width="16" height="16" source="pillarYellow.png"/>
+ </tile>
+ <tile id="46">
+  <image width="32" height="32" source="wall stairwayUp32x32.png"/>
+ </tile>
+ <tile id="47">
+  <image width="16" height="16" source="../../yellowSwitch.png"/>
  </tile>
 </tileset>
