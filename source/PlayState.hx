@@ -170,6 +170,12 @@ class PlayState extends FlxState
 		else if(countdown > -1){
 			countdown--;
 		}
+		for(e in exts){
+			if(FlxG.pixelPerfectOverlap(_player,e)){
+				FlxG.switchState(new MenuState());
+			}
+		}
+		
 		FlxG.collide(_player, pil);
 		FlxG.collide(_player,_mWalls);
 	}
