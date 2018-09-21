@@ -22,36 +22,6 @@
  <tile id="23">
   <image width="16" height="16" source="tilemapimagry/023.png"/>
  </tile>
- <tile id="35">
-  <image width="16" height="16" source="../../redSwitch.png"/>
- </tile>
- <tile id="36">
-  <image width="16" height="16" source="tilemapimagry/redPillar.png"/>
- </tile>
- <tile id="38">
-  <image width="16" height="16" source="tilemapimagry/blueSwitch.png"/>
- </tile>
- <tile id="39">
-  <image width="16" height="16" source="tilemapimagry/bluePillar.png"/>
- </tile>
- <tile id="42">
-  <image width="16" height="16" source="tilemapimagry/pillarGreen.png"/>
- </tile>
- <tile id="43">
-  <image width="16" height="16" source="tilemapimagry/greenSwitch.png"/>
- </tile>
- <tile id="44">
-  <image width="16" height="16" source="tilemapimagry/FloorBottonBlack.png"/>
- </tile>
- <tile id="45">
-  <image width="16" height="16" source="tilemapimagry/pillarYellow.png"/>
- </tile>
- <tile id="46">
-  <image width="32" height="32" source="tilemapimagry/wall stairwayUp32x32.png"/>
- </tile>
- <tile id="47">
-  <image width="16" height="16" source="tilemapimagry/yellowSwitch.png"/>
- </tile>
  <tile id="48">
   <image width="16" height="16" source="tilemapimagry/floorA.png"/>
  </tile>

@@ -57,10 +57,10 @@ class PlayState extends FlxState
 
 
 		FlxG.mouse.visible = false;
-		_player = new Player();
+		_player = new Player(609,614);
 		_map = new TiledMap(AssetPaths.LevelOne__tmx);
 		_mWalls = new FlxTilemap();
-		_mWalls.loadMapFromArray(cast(_map.getLayer("Tile Layer 1"), TiledTileLayer).tileArray, _map.width, _map.height, AssetPaths.everything__png, _map.tileWidth, _map.tileHeight, FlxTilemapAutoTiling.OFF, 1, 1, 3);
+		_mWalls.loadMapFromArray(cast(_map.getLayer("Tile Layer 3"), TiledTileLayer).tileArray, _map.width, _map.height, AssetPaths.everything__png, _map.tileWidth, _map.tileHeight, FlxTilemapAutoTiling.OFF, 1, 1, 3);
 		_mWalls.follow();
 		_mWalls.setTileProperties(1, FlxObject.ANY);
 		_mWalls.setTileProperties(2, FlxObject.NONE);
@@ -79,8 +79,8 @@ class PlayState extends FlxState
 		//myText = new FlxText(144, 144, 500); // x, y, width
 		//myText.text = "Hello World";
 		//myText.setBorderStyle(OUTLINE, FlxColor.RED, 1);
-		var tmpMap:TiledObjectLayer = cast(_map.getLayer("Object Layer 1"));
-		placeEntities(tmpMap);
+		//var tmpMap:TiledObjectLayer = cast(_map.getLayer("Object Layer 1"));
+		//placeEntities(tmpMap);
 		
 		//add(tmpMap);
 		add(myText);
