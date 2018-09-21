@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.1" tiledversion="2018.09.12" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="47">
+<map version="1.1" tiledversion="2018.09.12" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="50">
  <tileset firstgid="1" name="TileSet1" tilewidth="16" tileheight="16" tilecount="4" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
@@ -55,7 +55,7 @@
   <object id="10" name="on" type="pillar" x="190" y="219"/>
   <object id="11" name="on" type="pillar" x="162" y="221"/>
   <object id="12" name="on" type="pillar" x="135" y="222"/>
-  <object id="14" name="on" type="lever" x="152" y="83"/>
+  <object id="14" name="on" type="lever" x="181" y="96"/>
   <object id="15" name="q" type="plate" x="177" y="286"/>
   <object id="16" name="q" type="pillar" x="141" y="308"/>
   <object id="17" name="q" type="pillar" x="167" y="308"/>

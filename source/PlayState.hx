@@ -75,11 +75,7 @@ class PlayState extends FlxState
 		FlxG.cameras.reset(_zoomCam);
 		_zoomCam.targetZoom += 0.5;
 
-		//FlxG.camera.follow(_player, TOPDOWN,1);
 		super.create();
-		//myText = new FlxText(144, 144, 500); // x, y, width
-		//myText.text = "Hello World";
-		//myText.setBorderStyle(OUTLINE, FlxColor.RED, 1);
 		var tmpMap:TiledObjectLayer = cast(_map.getLayer("Mech"));
 		placeEntities(tmpMap);
 		
@@ -134,8 +130,8 @@ class PlayState extends FlxState
 		for(pg in pgs){
 			if(FlxG.pixelPerfectOverlap(_player,pg)){
 				if(FlxG.keys.justPressed.E){
-					tmppg = new Page(pg.x-200,pg.y-16);
-					tmppg.setchange(pg.room);
+					tmppg = new Page(pg.x,pg.y);
+					tmppg.setchange(pg.name);
 					add(tmppg);
 					tpexist = true;
 					pg.destroy();
@@ -183,22 +179,19 @@ class PlayState extends FlxState
 			var x:Int = Std.parseInt(e.xmlData.x.get("x"));
 			var y:Int = Std.parseInt(e.xmlData.x.get("y"));
 			if(e.type == "pillar"){
-				var p = new Pillar(x,y);
+				var p = new Pillar(x,y-16);
 				p.settype(e.type);
 				p.setname(e.name);
-				//p.setroom(Std.parseInt(e.xmlData.x.get("room")));
-				//p.setcolor(Std.parseInt(e.xmlData.x.get("color")));
 				pil.add(p);
 			}
 			else if(e.type == "lever"){
-				var s = new Switch(x,y+3);
-				//s.setcolor(Std.parseInt(e.xmlData.x.get("color")));
+				var s = new Switch(x,y-14);
 				s.setname(e.name);
 				s.settype(e.type);
 				swi.add(s);
 			}
 			else if(e.type == "plate"){
-				var pp = new PPlate(x,y);
+				var pp = new PPlate(x,y-16);
 				pp.settype(e.type);
 				pp.setname(e.name);
 				ppl.add(pp);
@@ -206,29 +199,22 @@ class PlayState extends FlxState
 			else if(e.type == "page"){
 				var pg = new Page(x,y);
 				pg.settype(e.type);
-				//pg.setroom(Std.parseInt(e.xmlData.x.get("room")));
-				pg.setchange(0);
+				pg.setname(e.name);
+				pg.setchange("p");
 				pgs.add(pg);
 
 			}
-			else if(e.name == "start"){
+			else if(e.type == "entrance"){
 				_player.x = e.x;
 				_player.y = e.y;
 			}
-			/*else if(e.type == "exit"){
+			else if(e.type == "exit"){
 				var ext = new Exit(x,y-16);
 				ext.settype(e.type);
-				ext.setroom(Std.parseInt(e.xmlData.x.get("room")));
 				ext.setname(e.name);
 				exts.add(ext);
 			}
-			else if(e.type == "start"){
-				var ent = new Start(x,y-16);
-				ent.settype(e.type);
-				ent.setroom(Std.parseInt(e.xmlData.x.get("room")));
-				ent.setname(e.name);
-				ents.add(ent);
-			}*/
+
 		}
 		for(s in swi){
 			add(s);
@@ -242,15 +228,6 @@ class PlayState extends FlxState
 		for(pg in pgs){
 			add(pg);
 		}
-		/*for(et in ents){
-			if(et.room == 1){
-				_player.x = et.x;
-				_player.y = et.y;
-				cur_x = et.x;
-				cur_y = et.y;
-			}
-			
-		}*/
 		add(_player);
 	}
 }
