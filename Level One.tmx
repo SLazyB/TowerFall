@@ -410,7 +410,7 @@
 </data>
  </layer>
  <objectgroup name="Object Layer 1" offsetx="1.5" offsety="1.5">
-  <object id="29" type="Lever" gid="36" x="657" y="494" width="16" height="16">
+  <object id="29" type="lever" gid="36" x="657" y="494" width="16" height="16">
    <properties>
     <property name="color" value="1"/>
     <property name="room" value="1"/>
@@ -446,7 +446,7 @@
     <property name="room" value="1"/>
    </properties>
   </object>
-  <object id="40" type="exit" x="784.5" y="467.5" width="29" height="30">
+  <object id="40" type="exit" x="782.5" y="473.5" width="29" height="30">
    <properties>
     <property name="room" value="1"/>
    </properties>
@@ -623,12 +623,12 @@
     <property name="room" value="2"/>
    </properties>
   </object>
-  <object id="112" type="entrance" x="1694.5" y="549" width="32" height="30.5">
+  <object id="112" type="entrance" x="1695" y="545" width="33" height="33">
    <properties>
-    <property name="room2" value=""/>
+    <property name="room" value="2"/>
    </properties>
   </object>
-  <object id="114" type="entrance" x="610" y="624.5" width="35.5" height="37">
+  <object id="114" name="a" type="entrance" x="609.5" y="613.5" width="35.5" height="37">
    <properties>
     <property name="room" value="1"/>
    </properties>
@@ -717,7 +717,7 @@
     <property name="room" value="3"/>
    </properties>
   </object>
-  <object id="148" type="entrence" x="2063.5" y="1584.5" width="34.5" height="37.5">
+  <object id="148" type="entrance" x="2063.5" y="1584.5" width="34.5" height="37.5">
    <properties>
     <property name="room" value="3"/>
    </properties>
@@ -776,7 +776,7 @@
     <property name="room" value="4"/>
    </properties>
   </object>
-  <object id="172" name="Name plat" type="pillar" gid="40" x="902.5" y="1564" width="16" height="16">
+  <object id="172" name="Name4C" type="pillar" gid="40" x="902.5" y="1564" width="16" height="16">
    <properties>
     <property name="color" value="2"/>
     <property name="room" value="4"/>
@@ -794,32 +794,32 @@
     <property name="room" value="4"/>
    </properties>
   </object>
-  <object id="181" name="Plat4a" type="platform" gid="45" x="885.5" y="1516.83" width="16" height="16">
+  <object id="181" name="Plat4a" type="plate" gid="45" x="885.5" y="1516.83" width="16" height="16">
    <properties>
     <property name="room" value="4"/>
    </properties>
   </object>
-  <object id="182" name="Plat4c" type="platform" gid="45" x="903.167" y="1543.5" width="16" height="16">
+  <object id="182" name="Plat4c" type="plate" gid="45" x="903.167" y="1543.5" width="16" height="16">
    <properties>
     <property name="room" value="4"/>
    </properties>
   </object>
-  <object id="183" name="Plat4c" type="platform" gid="45" x="902.167" y="1580.5" width="16" height="16">
+  <object id="183" name="Plat4c" type="plate" gid="45" x="902.167" y="1580.5" width="16" height="16">
    <properties>
     <property name="room" value="4"/>
    </properties>
   </object>
-  <object id="184" name="Plat4D" type="platform" gid="45" x="899.5" y="1606.83" width="16" height="16">
+  <object id="184" name="Plat4D" type="plate" gid="45" x="899.5" y="1606.83" width="16" height="16">
    <properties>
     <property name="room" value="4"/>
    </properties>
   </object>
-  <object id="185" name="Plat4D" type="platform" gid="45" x="902.5" y="1643.5" width="16" height="16">
+  <object id="185" name="Plat4D" type="plate" gid="45" x="902.5" y="1643.5" width="16" height="16">
    <properties>
     <property name="room" value="4"/>
    </properties>
   </object>
-  <object id="187" name="Plat4a" type="platform" gid="45" x="855.167" y="1517.5" width="16" height="16">
+  <object id="187" name="Plat4a" type="plate" gid="45" x="855.167" y="1517.5" width="16" height="16">
    <properties>
     <property name="room" value="4"/>
    </properties>
@@ -848,12 +848,12 @@
     <property name="room" value="4"/>
    </properties>
   </object>
-  <object id="192" name="Plat4B" type="platform" gid="45" x="954.5" y="1518.17" width="16" height="16">
+  <object id="192" name="Plat4B" type="plate" gid="45" x="954.5" y="1518.17" width="16" height="16">
    <properties>
     <property name="room" value="4"/>
    </properties>
   </object>
-  <object id="193" name="Plat4B" type="platform" gid="45" x="926.167" y="1518.5" width="16" height="16"/>
+  <object id="193" name="Plat4B" type="plate" gid="45" x="926.167" y="1518.5" width="16" height="16"/>
   <object id="194" type="pillar" gid="46" x="921.833" y="1589.5" width="16" height="16">
    <properties>
     <property name="color" value="4"/>
@@ -878,7 +878,7 @@
     <property name="room" value="4"/>
    </properties>
   </object>
-  <object id="199" name="Plat5D" type="platform" gid="45" x="902.833" y="1670.17" width="16" height="16">
+  <object id="199" name="Plat5D" type="plate" gid="45" x="902.833" y="1670.17" width="16" height="16">
    <properties>
     <property name="room" value="4"/>
    </properties>
@@ -942,7 +942,7 @@
     <property name="room" value="4"/>
    </properties>
   </object>
-  <object id="213" type="etrence" x="897.833" y="1449.17" width="29.3333" height="36.3333">
+  <object id="213" type="entrance" x="897.833" y="1449.17" width="29.3333" height="36.3333">
    <properties>
     <property name="room" value="4"/>
    </properties>
