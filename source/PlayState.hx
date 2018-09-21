@@ -31,6 +31,8 @@ class PlayState extends FlxState
 	private var swi:FlxTypedGroup<Switch>;
 	private var ppl:FlxTypedGroup<PPlate>;
 	private var pgs:FlxTypedGroup<Page>;
+	private var ents:FlxTypedGroup<Start>;
+	private var exts:FlxTypedGroup<Exit>;
 	public var cur_x:Int;
 	public var cur_y:Int;
 	public var cur_room:Int;
@@ -46,16 +48,19 @@ class PlayState extends FlxState
 		theme.looped = true;
 		theme.play();
 		cur_room = 0;
-		pil = new FlxTypedGroup<Pillar>(10);
-		swi = new FlxTypedGroup<Switch>(10);
-		ppl = new FlxTypedGroup<PPlate>(10);
-		pgs = new FlxTypedGroup<Page>(10);
+		pil = new FlxTypedGroup<Pillar>(60);
+		swi = new FlxTypedGroup<Switch>(20);
+		ppl = new FlxTypedGroup<PPlate>(20);
+		pgs = new FlxTypedGroup<Page>(5);
+		ents = new FlxTypedGroup<Start>(5);
+		exts = new FlxTypedGroup<Exit>(4);
+
 
 		FlxG.mouse.visible = false;
 		_player = new Player();
-		_map = new TiledMap(AssetPaths.TestTileMap1__tmx);
+		_map = new TiledMap(AssetPaths.LevelOne__tmx);
 		_mWalls = new FlxTilemap();
-		_mWalls.loadMapFromArray(cast(_map.getLayer("Tile1"), TiledTileLayer).tileArray, _map.width, _map.height, AssetPaths.everything__png, _map.tileWidth, _map.tileHeight, FlxTilemapAutoTiling.OFF, 1, 1, 3);
+		_mWalls.loadMapFromArray(cast(_map.getLayer("Tile Layer 1"), TiledTileLayer).tileArray, _map.width, _map.height, AssetPaths.everything2__png, _map.tileWidth, _map.tileHeight, FlxTilemapAutoTiling.OFF, 1, 1, 3);
 		_mWalls.follow();
 		_mWalls.setTileProperties(1, FlxObject.ANY);
 		_mWalls.setTileProperties(2, FlxObject.NONE);
@@ -74,7 +79,7 @@ class PlayState extends FlxState
 		//myText = new FlxText(144, 144, 500); // x, y, width
 		//myText.text = "Hello World";
 		//myText.setBorderStyle(OUTLINE, FlxColor.RED, 1);
-		var tmpMap:TiledObjectLayer = cast(_map.getLayer("Mech"));
+		var tmpMap:TiledObjectLayer = cast(_map.getLayer("Object Layer 1"));
 		placeEntities(tmpMap);
 		
 		//add(tmpMap);
@@ -85,6 +90,18 @@ class PlayState extends FlxState
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
+		for(e in exts){
+			if(FlxG.pixelPerfectOverlap(_player,e)){
+				for(st in ents){
+					if(st.room == (e.room + 1)){
+						_player.x = st.x;
+						_player.y = st.y;
+						cur_x = st.x;
+						cur_y = st.y;
+					}
+				}
+			}
+		}
 		for(s in swi){
 			if(FlxG.pixelPerfectOverlap(_player,s)){
 				if(FlxG.keys.justPressed.E){
@@ -173,7 +190,7 @@ class PlayState extends FlxState
 				p.setcolor(Std.parseInt(e.xmlData.x.get("color")));
 				pil.add(p);
 			}
-			else if(e.type == "switch"){
+			else if(e.type == "lever"){
 				var s = new Switch(x,y-13);
 				s.setcolor(Std.parseInt(e.xmlData.x.get("color")));
 				s.settype(e.type);
@@ -193,11 +210,19 @@ class PlayState extends FlxState
 				pgs.add(pg);
 
 			}
-			else if(e.name == "Start"){
-				_player.x = x;
-				_player.y = y;
-				cur_x = x;
-				cur_y = y;
+			else if(e.type == "exit"){
+				var ext = new Exit(x,y-16);
+				ext.settype(e.type);
+				ext.setoom(Std.parseInt(e.xmlData.x.get("room")));
+				ext.setname(e.name);
+				exts.add(ext);
+			}
+			else if(e.type == "entrance"){
+				var ent = new Start(x,y-16);
+				ent.settype(e.type);
+				ent.setoom(Std.parseInt(e.xmlData.x.get("room")));
+				ent.setname(e.name);
+				ents.add(ext);
 			}
 		}
 		for(s in swi){

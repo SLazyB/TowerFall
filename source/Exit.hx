@@ -8,17 +8,15 @@ import flixel.util.FlxColor;
 import flixel.FlxG;
 import flixel.math.FlxPoint;
 
-class PPlate extends FlxSprite
+class Exit extends FlxSprite
 {
-    public var up:Bool;
     public var type:String;
     public var room:Int;
     public var name:String;
     public function new(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset)
     {
         super(X, Y, SimpleGraphic);
-        loadGraphic("assets/data/greysquare.png", true, 16, 16);
-        up = true;
+        loadGraphic("assets/data/wallstairway32x32.png", true, 32, 32);
     }
     public function settype(s:String){
         type = s;

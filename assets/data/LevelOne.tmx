@@ -410,7 +410,7 @@
 </data>
  </layer>
  <objectgroup name="Object Layer 1" offsetx="1.5" offsety="1.5">
-  <object id="29" type="Lever" gid="36" x="657" y="494" width="16" height="16">
+  <object id="29" type="lever" gid="36" x="657" y="494" width="16" height="16">
    <properties>
     <property name="color" value="1"/>
     <property name="room" value="1"/>
