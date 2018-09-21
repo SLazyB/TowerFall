@@ -32,13 +32,13 @@
   <image width="16" height="16" source="tilemapimagry/redPillar.png"/>
  </tile>
  <tile id="38">
-  <image width="16" height="16" source="../../blueSwitch.png"/>
+  <image width="16" height="16" source="tilemapimagry/blueSwitch.png"/>
  </tile>
  <tile id="39">
-  <image width="16" height="16" source="../../bluePillar.png"/>
+  <image width="16" height="16" source="tilemapimagry/bluePillar.png"/>
  </tile>
  <tile id="42">
-  <image width="16" height="16" source="pillarGreen.png"/>
+  <image width="16" height="16" source="tilemapimagry/pillarGreen.png"/>
  </tile>
  <tile id="43">
   <image width="16" height="16" source="tilemapimagry/greenSwitch.png"/>
@@ -47,7 +47,7 @@
   <image width="16" height="16" source="tilemapimagry/FloorBottonBlack.png"/>
  </tile>
  <tile id="45">
-  <image width="16" height="16" source="pillarYellow.png"/>
+  <image width="16" height="16" source="tilemapimagry/pillarYellow.png"/>
  </tile>
  <tile id="46">
   <image width="32" height="32" source="tilemapimagry/wall stairwayUp32x32.png"/>

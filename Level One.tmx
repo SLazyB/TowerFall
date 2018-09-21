@@ -717,12 +717,12 @@
     <property name="room" value="3"/>
    </properties>
   </object>
-  <object id="148" x="2063.5" y="1584.5" width="34.5" height="37.5">
+  <object id="148" type="entrence" x="2063.5" y="1584.5" width="34.5" height="37.5">
    <properties>
     <property name="room" value="3"/>
    </properties>
   </object>
-  <object id="149" x="2209" y="1588.5" width="40.5" height="38.5">
+  <object id="149" type="exit" x="2209" y="1588.5" width="40.5" height="38.5">
    <properties>
     <property name="room" value="3"/>
    </properties>
@@ -942,7 +942,7 @@
     <property name="room" value="4"/>
    </properties>
   </object>
-  <object id="213" x="897.833" y="1449.17" width="29.3333" height="36.3333">
+  <object id="213" type="etrence" x="897.833" y="1449.17" width="29.3333" height="36.3333">
    <properties>
     <property name="room" value="4"/>
    </properties>
