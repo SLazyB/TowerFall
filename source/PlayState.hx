@@ -183,7 +183,7 @@ class PlayState extends FlxState
 			var x:Int = Std.parseInt(e.xmlData.x.get("x"));
 			var y:Int = Std.parseInt(e.xmlData.x.get("y"));
 			if(e.type == "pillar"){
-				var p = new Pillar(x,y-16);
+				var p = new Pillar(x,y);
 				p.settype(e.type);
 				p.setname(e.name);
 				//p.setroom(Std.parseInt(e.xmlData.x.get("room")));
@@ -191,20 +191,20 @@ class PlayState extends FlxState
 				pil.add(p);
 			}
 			else if(e.type == "lever"){
-				var s = new Switch(x,y-13);
+				var s = new Switch(x,y+3);
 				//s.setcolor(Std.parseInt(e.xmlData.x.get("color")));
 				s.setname(e.name);
 				s.settype(e.type);
 				swi.add(s);
 			}
 			else if(e.type == "plate"){
-				var pp = new PPlate(x,y-16);
+				var pp = new PPlate(x,y);
 				pp.settype(e.type);
 				pp.setname(e.name);
 				ppl.add(pp);
 			}
 			else if(e.type == "page"){
-				var pg = new Page(x,y-16);
+				var pg = new Page(x,y);
 				pg.settype(e.type);
 				//pg.setroom(Std.parseInt(e.xmlData.x.get("room")));
 				pg.setchange(0);
