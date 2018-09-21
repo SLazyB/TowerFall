@@ -18,8 +18,12 @@ class Player extends FlxSprite
     public function new(?X:Float=0, ?Y:Float=0, ?SimpleGraphic:FlxGraphicAsset)
     {
         super(X, Y, SimpleGraphic);
-        loadGraphic("assets/images/fw.png", true, 32, 32);
-        animation.add("fw", [4,3,4,5,],14,true);
+        loadGraphic("assets/images/walking.png", true, 32, 32);
+        animation.add("sw", [4,3,4,5],14,true);
+        animation.add("nw", [12, 11,12,13],14,true);
+        animation.add("l_r", [16,17,16,18],14,true);
+        setFacingFlip(FlxObject.LEFT, false, false);
+        setFacingFlip(FlxObject.RIGHT, true, false);
         drag.x = drag.y = 1500;
         _sndWalk = FlxG.sound.load(AssetPaths.step__wav);
     }
@@ -71,10 +75,18 @@ class Player extends FlxSprite
             velocity.set(speed, 0);
             velocity.rotate(FlxPoint.weak(0, 0), mA);
         }
-        if ((velocity.x != 0 || velocity.y != 0) && touching == FlxObject.NONE){
+        if (velocity.x != 0 || velocity.y != 0){
             _sndWalk.play();
             if(!playing || c_mA != mA){
-                animation.play("fw");
+                switch (facing)
+                {
+                    case FlxObject.LEFT, FlxObject.RIGHT:
+                        animation.play("l_r");
+                    case FlxObject.UP:
+                        animation.play("nw");
+                    case FlxObject.DOWN:
+                        animation.play("sw");
+                }
                 c_mA = mA;
                 playing = true;
             }
