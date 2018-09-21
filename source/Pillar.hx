@@ -38,23 +38,23 @@ class Pillar extends FlxSprite
     public function setcolor(s:Int){
         col = s;
         if(col == 1){
-            loadGraphic("assets/data/redPillar.png", true, 16, 16);
+            loadGraphic("assets/data/redPillarA.png", true, 16, 16);
             animation.add("mv",[0,1],10,false);
         }
         else if(col == 2){
-            loadGraphic("assets/data/bluePillar.png", true, 16, 16);
+            loadGraphic("assets/data/bluePillarA.png", true, 16, 16);
             animation.add("mv",[0,1],10,false);
         }
         else if(col == 3){
-            loadGraphic("assets/data/greenPillar.png", true, 16, 16);
+            loadGraphic("assets/data/greenPillarA.png", true, 16, 16);
             animation.add("mv",[0,1],10,false);
         }
         else if(col == 4){
-            loadGraphic("assets/data/yellowPillar.png", true, 16, 16);
+            loadGraphic("assets/data/yellowPillarA.png", true, 16, 16);
             animation.add("mv",[0,1],10,false);
         }
         else{
-            loadGraphic("assets/data/blackPillar.png", true, 16, 16);
+            loadGraphic("assets/data/blackPillarA.png", true, 16, 16);
             animation.add("mv",[0,1],10,false);
         }
     }

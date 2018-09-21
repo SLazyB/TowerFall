@@ -33,8 +33,8 @@ class PlayState extends FlxState
 	private var pgs:FlxTypedGroup<Page>;
 	private var ents:FlxTypedGroup<Start>;
 	private var exts:FlxTypedGroup<Exit>;
-	public var cur_x:Int;
-	public var cur_y:Int;
+	public var cur_x:Float;
+	public var cur_y:Float;
 	public var cur_room:Int;
 	public var theme:FlxSound;
 	public var p_name:String;
@@ -60,7 +60,7 @@ class PlayState extends FlxState
 		_player = new Player();
 		_map = new TiledMap(AssetPaths.LevelOne__tmx);
 		_mWalls = new FlxTilemap();
-		_mWalls.loadMapFromArray(cast(_map.getLayer("Tile Layer 1"), TiledTileLayer).tileArray, _map.width, _map.height, AssetPaths.everything2__png, _map.tileWidth, _map.tileHeight, FlxTilemapAutoTiling.OFF, 1, 1, 3);
+		_mWalls.loadMapFromArray(cast(_map.getLayer("Tile Layer 1"), TiledTileLayer).tileArray, _map.width, _map.height, AssetPaths.everything__png, _map.tileWidth, _map.tileHeight, FlxTilemapAutoTiling.OFF, 1, 1, 3);
 		_mWalls.follow();
 		_mWalls.setTileProperties(1, FlxObject.ANY);
 		_mWalls.setTileProperties(2, FlxObject.NONE);
@@ -213,16 +213,16 @@ class PlayState extends FlxState
 			else if(e.type == "exit"){
 				var ext = new Exit(x,y-16);
 				ext.settype(e.type);
-				ext.setoom(Std.parseInt(e.xmlData.x.get("room")));
+				ext.setroom(Std.parseInt(e.xmlData.x.get("room")));
 				ext.setname(e.name);
 				exts.add(ext);
 			}
 			else if(e.type == "entrance"){
 				var ent = new Start(x,y-16);
 				ent.settype(e.type);
-				ent.setoom(Std.parseInt(e.xmlData.x.get("room")));
+				ent.setroom(Std.parseInt(e.xmlData.x.get("room")));
 				ent.setname(e.name);
-				ents.add(ext);
+				ents.add(ent);
 			}
 		}
 		for(s in swi){
@@ -236,6 +236,15 @@ class PlayState extends FlxState
 		}
 		for(pg in pgs){
 			add(pg);
+		}
+		for(et in ents){
+			if(et.room == 1){
+				_player.x = et.x;
+				_player.y = et.y;
+				cur_x = et.x;
+				cur_y = et.y;
+			}
+			
 		}
 		add(_player);
 	}

@@ -27,23 +27,23 @@ class Switch extends FlxSprite
     public function setcolor(s:Int){
         col = s;
         if(col == 1){
-            loadGraphic("assets/data/redSwitch.png", true, 16, 16);
+            loadGraphic("assets/data/redSwitchA.png", true, 16, 16);
             animation.add("mv",[0,1],10,false);
         }
         else if(col == 2){
-            loadGraphic("assets/data/blueSwitch.png", true, 16, 16);
+            loadGraphic("assets/data/blueSwitchA.png", true, 16, 16);
             animation.add("mv",[0,1],10,false);
         }
         else if(col == 3){
-            loadGraphic("assets/data/greenSwitch.png", true, 16, 16);
+            loadGraphic("assets/data/greenSwitchA.png", true, 16, 16);
             animation.add("mv",[0,1],10,false);
         }
         else if(col == 4){
-            loadGraphic("assets/data/yellowSwitch.png", true, 16, 16);
+            loadGraphic("assets/data/yellowSwitchA.png", true, 16, 16);
             animation.add("mv",[0,1],10,false);
         }
         else{
-            loadGraphic("assets/data/blackSwitch.png", true, 16, 16);
+            loadGraphic("assets/data/blackSwitchA.png", true, 16, 16);
             animation.add("mv",[0,1],10,false);
         }
     }
