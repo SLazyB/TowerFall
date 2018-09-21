@@ -632,25 +632,117 @@
   <object id="72" type="pillar" gid="37" x="1742.5" y="687.167" width="16" height="16"  color="1" room="2"/>
    <object id="74" type="pillar" gid="37" x="1758.5" y="687.833" width="16" height="16"  color="1" room="2"/>
    <object id="75" type="pillar" gid="37" x="1774.5" y="687.5" width="16" height="16" color="1" room="2"/>
-  <object id="77" type="pillar" gid="37" x="1789.5" y="687.833" width="16" height="16" color="1" room="2"/>
-  <object id="78" type="pillar" gid="37" x="1790.17" y="702.167" width="16" height="16" color="1" room="2"/>
-  <object id="79" type="pillar" gid="37" x="1789.83" y="717.5" width="16" height="16" color="1" room="2"/>
-  <object id="80" type="pillar" gid="37" x="1789.5" y="734.167" width="16" height="16" color="1" room="2"/>
-  <object id="83" gid="36" x="1786.17" y="574.167" width="16" height="16" color="1" room="2"/>
-  <object id="84" type="lever" gid="44" x="1766.5" y="750.833" width="16" height="16" color="3" room="2"/>
-  <object id="85" gid="43" x="1859.17" y="590.833" width="16" height="16" color="3" room="2"/>
-  <object id="88" gid="43" x="1859.17" y="607.167" width="16" height="16" color="3" room="2"/>
-  <object id="89" gid="43" x="1859.5" y="624.833" width="16" height="16" color="3" room="2"/>
-  <object id="90" gid="43" x="1859.5" y="641.833" width="16" height="16" color="3" room="2"/>
-  <object id="91" gid="43" x="1859.5" y="658.5" width="16" height="16" color="3" room="2"/>
-  <object id="95" gid="43" x="1858.83" y="673.833" width="16" height="16" color="3" room="2"/>
-  <object id="96" gid="43" x="1859.5" y="689.167" width="16" height="16" color="3" room="2"/>
-  <object id="97" gid="43" x="1859.17" y="705.833" width="16" height="16" color="3" room="2"/>
-  <object id="98" gid="43" x="1859.17" y="720.5" width="16" height="16" color="3" room="2"/>
-  <object id="99" gid="43" x="1858.83" y="735.5" width="16" height="16" color="3" room="2"/>
-  <object id="103" name="plate2" type="plate" gid="45" x="1710.17" y="605.5" width="16" height="16" room="2"/>
-  <object id="111" type="exit" x="1900" y="548" width="37.5" height="35" room="2"/>
-  <object id="112" type="entrance" x="1695" y="545" width="33" height="33" room="2"/>
+  <object id="77" type="pillar" gid="37" x="1789.5" y="687.833" width="16" height="16">
+   <properties>
+    <property name="color" value="1"/>
+    <property name="room" value="2"/>
+   </properties>
+  </object>
+  <object id="78" type="pillar" gid="37" x="1790.17" y="702.167" width="16" height="16">
+   <properties>
+    <property name="color" value="1"/>
+    <property name="room" value="2"/>
+   </properties>
+  </object>
+  <object id="79" type="pillar" gid="37" x="1789.83" y="717.5" width="16" height="16">
+   <properties>
+    <property name="color" value="1"/>
+    <property name="room" value="2"/>
+   </properties>
+  </object>
+  <object id="80" type="pillar" gid="37" x="1789.5" y="734.167" width="16" height="16">
+   <properties>
+    <property name="color" value="1"/>
+    <property name="room" value="2"/>
+   </properties>
+  </object>
+  <object id="83" gid="36" x="1786.17" y="574.167" width="16" height="16">
+   <properties>
+    <property name="color" value="1"/>
+    <property name="room" value="2"/>
+   </properties>
+  </object>
+  <object id="84" type="lever" gid="44" x="1766.5" y="750.833" width="16" height="16">
+   <properties>
+    <property name="color" value="3"/>
+    <property name="room" value="2"/>
+   </properties>
+  </object>
+  <object id="85" gid="43" x="1859.17" y="590.833" width="16" height="16">
+   <properties>
+    <property name="color" value="3"/>
+    <property name="room" value="2"/>
+   </properties>
+  </object>
+  <object id="88" gid="43" x="1859.17" y="607.167" width="16" height="16">
+   <properties>
+    <property name="color" value="3"/>
+    <property name="room" value="2"/>
+   </properties>
+  </object>
+  <object id="89" gid="43" x="1859.5" y="624.833" width="16" height="16">
+   <properties>
+    <property name="color" value="3"/>
+    <property name="room" value="2"/>
+   </properties>
+  </object>
+  <object id="90" gid="43" x="1859.5" y="641.833" width="16" height="16">
+   <properties>
+    <property name="color" value="3"/>
+    <property name="room" value="2"/>
+   </properties>
+  </object>
+  <object id="91" gid="43" x="1859.5" y="658.5" width="16" height="16">
+   <properties>
+    <property name="color" value="3"/>
+    <property name="room" value="2"/>
+   </properties>
+  </object>
+  <object id="95" gid="43" x="1858.83" y="673.833" width="16" height="16">
+   <properties>
+    <property name="color" value="3"/>
+    <property name="room" value="2"/>
+   </properties>
+  </object>
+  <object id="96" gid="43" x="1859.5" y="689.167" width="16" height="16">
+   <properties>
+    <property name="color" value="3"/>
+    <property name="room" value="2"/>
+   </properties>
+  </object>
+  <object id="97" gid="43" x="1859.17" y="705.833" width="16" height="16">
+   <properties>
+    <property name="color" value="3"/>
+    <property name="room" value="2"/>
+   </properties>
+  </object>
+  <object id="98" gid="43" x="1859.17" y="720.5" width="16" height="16">
+   <properties>
+    <property name="color" value="3"/>
+    <property name="room" value="2"/>
+   </properties>
+  </object>
+  <object id="99" gid="43" x="1858.83" y="735.5" width="16" height="16">
+   <properties>
+    <property name="color" value="3"/>
+    <property name="room" value="2"/>
+   </properties>
+  </object>
+  <object id="103" name="plate2" type="plate" gid="45" x="1710.17" y="605.5" width="16" height="16">
+   <properties>
+    <property name="room" value="2"/>
+   </properties>
+  </object>
+  <object id="111" type="exit" x="1900" y="548" width="37.5" height="35">
+   <properties>
+    <property name="room" value="2"/>
+   </properties>
+  </object>
+  <object id="112" type="entrance" x="1695" y="545" width="33" height="33">
+   <properties>
+    <property name="room" value="2"/>
+   </properties>
+  </object>
   <object id="114" name="a" type="entrance" x="609.5" y="613.5" width="35.5" height="37" room="1"/>
   <object id="117" type="lever" gid="48" x="2156" y="1613" width="16" height="16">
    <properties>
